@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Word Tool | Instant Online Word Count and much more</title>
+    <link rel="stylesheet" href="assets/main.css">
+</head>
+<body>
+    
+    <header class="flex-row flex-center">
+        <h1>Easy Word Tool</h1>
+    </header>
+    <main>
+        <div id="inputWrapper" class="flex">
+            <label for="userTextarea"><span class="screenReader-txt">Enter your text to count words and other operations</span></label>
+            <textarea name="userText" id="userTextarea" placeholder="Enter text here" aria-placeholder="Enter text here"></textarea>
+            <p id="ewtCountResults" aria-haspopup="dialog">Words: <span class="ewtWordCount"></span> | Characters: <span class="ewtCharCount"></span></p>
+        </div>
+    </main>
+    <footer></footer>
+
+    <div id="ewtcountResultsPopup" role="dialog" aria-label="Word Count Details" aria-hidden="true">
+        <div>Words: <span class="ewtWordCount"></span></div>
+        <div>Characters: <span class="ewtCharCount"></span></div>
+    </div>
+
+    <script src="assets/main.js"></script>
+</body>
+</html>
