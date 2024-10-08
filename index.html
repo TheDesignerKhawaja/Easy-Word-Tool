@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Easy Word Tool | Instant Online Word Count and much more</title>
+    <meta name="description" content="Easy Word Tool offers instant online word count, character count, and more with a user-friendly interface. Perfect for writers, students, and anyone who needs quick text analysis.">
     <link rel="stylesheet" href="assets/main.css">
 </head>
 <body>
@@ -13,16 +14,18 @@
     </header>
     <main>
         <div id="inputWrapper" class="flex">
-            <label for="userTextarea"><span class="screenReader-txt">Enter your text to count words and other operations</span></label>
+            <label for="userTextarea" class="screenReader-txt">Enter your text to count words and other operations:</label>
             <textarea name="userText" id="userTextarea" placeholder="Enter text here" aria-placeholder="Enter text here"></textarea>
-            <p id="ewtCountResults" aria-haspopup="dialog">Words: <span class="ewtWordCount"></span> | Characters: <span class="ewtCharCount"></span></p>
+            <p id="ewtCountResults" aria-haspopup="dialog" onclick="togglePopup('ewtcountResultsPopup')">Words: <span class="ewtWordCount">0</span> | Characters: <span class="ewtCharCount">0</span></p>
         </div>
     </main>
-    <footer></footer>
+    <footer class="flex flex-center"><p>Copyright &copy; Easy Word Tool - <span id="copyrightYear">2024</span></p></footer>
 
-    <div id="ewtcountResultsPopup" role="dialog" aria-label="Word Count Details" aria-hidden="true">
-        <div>Words: <span class="ewtWordCount"></span></div>
-        <div>Characters: <span class="ewtCharCount"></span></div>
+    <div id="ewtcountResultsPopup" role="dialog" aria-labelledby="popupLable" aria-hidden="true" class="ewt-popup flex-center">
+        <button aria-label="Close Popup" onclick="togglePopup('ewtcountResultsPopup')">&times;</button>
+        <h2 id="popupLable">Count Details</h2>
+        <div>Words: <span class="ewtWordCount">0</span></div>
+        <div>Characters: <span class="ewtCharCount">0</span></div>
     </div>
 
     <script src="assets/main.js"></script>

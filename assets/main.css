@@ -1,0 +1,111 @@
+/* UNIVERSAL */
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.ewt-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 250px;
+    min-height: 100px;
+    padding: 20px;
+    background: white;
+    border-radius: 15px;
+    filter: drop-shadow(0 0 15px rgba(0,0,0,.1));
+}
+
+.ewt-popup[aria-hidden="false"] {
+    display: flex;
+    flex-direction: column;
+}
+
+/* .ewt-popup[aria-hidden="false"]::before {
+    content: '';
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255,255,255,0.3);
+    backdrop-filter: blur(5px);
+    z-index: -1;
+} */
+
+/* LAYOUT */
+.flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hide Screen Reader Text form View*/
+.screenReader-txt {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    word-wrap: normal;
+}
+
+header,
+main,
+footer {padding: 20px;}
+
+#userTextarea {
+    width: 100%;
+    height: 400px;
+    padding: 20px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    resize: vertical;
+    font-size: 16px;
+}
+
+#ewtCountResults {
+    align-self: flex-end;
+    margin: -25px 30px 0;
+    padding: 10px;
+    font-size: 20px;
+    background: #f8f8f8;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#ewtCountResults span {
+    display: inline-block;
+    color: gold;
+}
+
+.animateCount {animation: countAnim 1.5s ease-out forwards;}
+
+@keyframes countAnim {
+    from {
+        opacity: .3;
+        transform: scale(0.8);
+        color: red;
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+        color: gold;
+    }
+}
